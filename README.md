@@ -1,5 +1,17 @@
 ## Usage
 
+
+String to ESM Example Cross Environment
+```js
+import { strToESM } from 'esm-loader/loader.mjs'
+
+const module = strToESM('export const myModule = { yellow: \'snowflakes\'}')
+    .then(({ myModule })=>console.log(myModule.yellow)) // Logs: snowflakes
+``` 
+
+
+
+
 Inside NodeJS with modules support
 ==========
 
@@ -39,3 +51,14 @@ fetch('https://url.to/your/js.mjs')
 
 dynamicImport('url') // uses import in the browser and fetchImport in nodejs
 ```
+
+
+# Advanced Stuff
+Lets Import a mjs file from a source and rewrite it to resolve to the right locations
+if relativ specifiers are used 
+```js
+// TODO:
+``` 
+
+# TODO
+- Improve rollup support.
