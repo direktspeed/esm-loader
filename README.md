@@ -1,0 +1,41 @@
+## Usage
+
+Inside NodeJS with modules support
+==========
+
+```js
+// The exported fetch is cross environment Nodejs and Browser
+import { strToESM, fetch ,fetchImport, dynamicImport } from 'esm-loader/loader.mjs'
+
+// Creates a dynamic import from a string
+// Returns a ESM Module with exports from string has resovle for Bare and Absolut Specifiers
+// can easy be rewritten for your own extensions
+fetchImport('url') //is a shortHand helper for fetch('https://url.to/your/js.mjs').then(strToESM)
+    .then(mod=>console.log(mod))
+
+dynamicImport('url') // uses import in the browser and fetchImport in nodejs
+
+
+```
+
+inside browser for custom elements or scripts 
+========
+
+```js
+import { strToESM, dynamicImport } from 'esm-loader/loader.mjs'
+
+// Creates a dynamic import from a string
+
+// can easy be rewritten for your own extensions
+fetch('https://url.to/your/js.mjs')
+    .then(strToESM)
+    /**
+     *  Returns a ESM Module with exports from string 
+     *  has resolve for Bare and Absolut Specifiers
+     *  Your Can Easy rewrite the String that you get from 
+     *  fetch befor you use it as input to strToESM.
+     */
+    .then(mod=>console.log(mod))
+
+dynamicImport('url') // uses import in the browser and fetchImport in nodejs
+```

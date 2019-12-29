@@ -1,0 +1,31 @@
+{
+  "name": "esm-loader",
+  "version": "0.0.1",
+  "description": "A ESM Loader for NodeJS and Browsers Allows to import modules from any source is extendible via modules.",
+  "main": "loader.mjs",
+  "module": "loader.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/direktspeed/esm-loader.git"
+  },
+  "keywords": [
+    "ES",
+    "ESM",
+    "Module",
+    "Loader",
+    "Protocol",
+    "Support",
+    "http",
+    "any"
+  ],
+  "author": "Frank Lemanschik <frank@dspeed.eu>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/direktspeed/esm-loader/issues"
+  },
+  "homepage": "https://github.com/direktspeed/esm-loader#readme"
+}
