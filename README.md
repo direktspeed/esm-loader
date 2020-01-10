@@ -9,9 +9,6 @@ const module = strToESM('export const myModule = { yellow: \'snowflakes\'}')
     .then(({ myModule })=>console.log(myModule.yellow)) // Logs: snowflakes
 ``` 
 
-
-
-
 Inside NodeJS with modules support
 ==========
 
@@ -26,8 +23,6 @@ fetchImport('url') //is a shortHand helper for fetch('https://url.to/your/js.mjs
     .then(mod=>console.log(mod))
 
 dynamicImport('url') // uses import in the browser and fetchImport in nodejs
-
-
 ```
 
 inside browser for custom elements or scripts 
@@ -52,6 +47,8 @@ fetch('https://url.to/your/js.mjs')
 dynamicImport('url') // uses import in the browser and fetchImport in nodejs
 ```
 
+# rollup support landed
+https://github.com/rollup/plugins/pull/150
 
 # Advanced Stuff
 Lets Import a mjs file from a source and rewrite it to resolve to the right locations
@@ -60,5 +57,3 @@ if relativ specifiers are used
 // TODO:
 ``` 
 
-# TODO
-- Improve rollup support.
