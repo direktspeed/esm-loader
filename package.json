@@ -1,9 +1,9 @@
 {
   "name": "esm-loader",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A ESM Loader for NodeJS and Browsers Allows to import modules from any source is extendible via modules.",
-  "main": "loader.mjs",
-  "module": "loader.mjs",
+  "main": "esm-loader.mjs",
+  "module": "esm-loader.mjs",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
