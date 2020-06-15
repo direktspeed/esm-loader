@@ -20,9 +20,9 @@ export const nodeFetch = url =>
                 http.get(url, res => {
                     const { statusCode, headers } = res;
                     if (statusCode === 200) {
-                        let rawData = [];
+                        let rawData = '';
                         //res.setEncoding('utf8');
-                        res.on('data', d => rawData.push(d));
+                        res.on('data', d => rawData += d);
                         res.on('end', () => resolve([rawData.join(''), url]));
                         res.on('error', rej)
                     } else {
