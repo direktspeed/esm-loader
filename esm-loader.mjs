@@ -26,7 +26,6 @@ export const nodeFetch = url =>
                         res.on('end', () => resolve([rawData.join(''), url]));
                         res.on('error', rej)
                     } else {
-                        const { statusCode, headers } = res
                         rej({ url, statusCode, headers })
                     }
                 });
