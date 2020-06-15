@@ -23,7 +23,7 @@ export const nodeFetch = url =>
                         let rawData = '';
                         //res.setEncoding('utf8');
                         res.on('data', d => rawData += d);
-                        res.on('end', () => resolve([rawData.join(''), url]));
+                        res.on('end', () => resolve([rawData, url]));
                         res.on('error', rej)
                     } else {
                         rej({ url, statusCode, headers })
