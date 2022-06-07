@@ -15,9 +15,9 @@ The Steps to form a Module Instance with livebindings!
 ## Examples
 String to ESModule Examples Cross Environment
 ```js
-import { ESMLoader } from 'esm-loader/loader.mjs'
+import { SourceTextModule } from 'esm-loader/loader.mjs'
 
-const module = ESMLoader('export const myModule = { yellow: \'snowflakes\'}')
+const module = SourceTextModule('export const myModule = { yellow: \'snowflakes\'}')
     .then(({ myModule })=>console.log(myModule.yellow)) // Logs: snowflakes
 ``` 
 
@@ -43,22 +43,21 @@ This allows to use import with dynamic content.
 
 ```js
 // The exported fetch is cross environment Nodejs and Browser
-import { ESMLoader, fetch ,fetchImport, dynamicImport } from 'esm-loader/loader.mjs'
+import { SourceTextModule, fetchImport } from 'esm-loader/loader.mjs'
 
 // Creates a dynamic import from a string
 // Returns a ESM Module with exports from string has resovle for Bare and Absolut Specifiers
 // can easy be rewritten for your own extensions
-fetchImport('url') //is a shortHand helper for fetch('https://url.to/your/js.mjs').then(ESMLoader)
+fetchImport('url') //is a shortHand helper for fetch('https://url.to/your/js.mjs').then(SourceTextModule)
     .then(mod=>console.log(mod))
 
-dynamicImport('url') // uses import in the browser and fetchImport in nodejs
 ```
 CJS
 ```js
-const fs = require('fs')
+const { readFile } = require('node:fs/promises')
 //ESM-LOADER is ES so you need to use dynamic import
 import('esm-loader/esm-loader.mjs') // NodeJS Resolve used here
-  .then(({ ESMLoader })=>fs.promises.readFile('path/to/file.txt,ts,any').then(ESMLoader)) // NodeJS Resolve used here 
+  .then(({ SourceTextModule }) => readFile('path/to/file.txt,ts,any').then(SourceTextModule)) // NodeJS Resolve used here 
   //no relativ urls can use transformations befor then(ESMLoader)
   .then(myModule=>console.log(myModule)) //=> returns a real ESModule
 ```
@@ -69,13 +68,13 @@ inside browser for custom elements or scripts
 ========
 
 ```js
-import { ESMLoader, dynamicImport } from 'esm-loader/loader.mjs'
+import { SourceTextModule, fetchImport } from 'esm-loader/loader.mjs'
 
 // Creates a dynamic import from a string
 
 // can easy be rewritten for your own extensions
 fetch('https://url.to/your/js.mjs')
-    .then(ESMLoader)
+    .then(SourceTextModule)
     /**
      *  Returns a ESM Module with exports from string 
      *  has resolve for Bare and Absolut Specifiers
@@ -84,7 +83,7 @@ fetch('https://url.to/your/js.mjs')
      */
     .then(mod=>console.log(mod))
 
-dynamicImport('url') // uses import in the browser and fetchImport in nodejs
+fetchImport('url') // shorthand for the above
 ```
 
 # rollup support landed
