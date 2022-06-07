@@ -1,6 +1,9 @@
 /**
  * Change Log
- * Add Core Method ESMLoader
+ * - Add Core Method ESMLoader
+ * - newer fetch
+ * - reference the rollup require loader i do not remember the repo :)
+ * - but it is importent to know that this is like a demo for importFromString and later requireFromString. 
  */
 
 export const moduleString = str => `data:text/javascript,${str}`;
@@ -32,8 +35,8 @@ export const nodeFetch = url =>
             })
     );
 
-
-export const fetch = typeof window !== 'undefined' ? window.fetch : nodeFetch;
+// Node 18 got fetch but i leave the old behavior with https for demos
+export const fetch = globalThis.fetch || nodeFetch;
 export const fetchImport = url => fetch(url).then(ESMLoader);
 export const dynamicImport = url => {
     console.log('deprecated: please use importScript() or ESMImport() and not dynamicImport')
