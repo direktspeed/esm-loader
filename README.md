@@ -15,14 +15,14 @@ The Steps to form a Module Instance with livebindings!
 ## Examples
 String to ESModule Examples Cross Environment
 ```js
-import { SourceTextModule } from 'esm-loader/loader.mjs'
+import { SourceTextModule } from 'esm-loader/esm-loader.mjs'
 
 const module = SourceTextModule('export const myModule = { yellow: \'snowflakes\'}')
     .then(({ myModule })=>console.log(myModule.yellow)) // Logs: snowflakes
 ``` 
 
 ```js
-import { moduleString } from 'esm-loader/loader.mjs'
+import { moduleString } from 'esm-loader/esm-loader.mjs'
 
 const module = import(moduleString('export const myModule = { yellow: \'snowflakes\'}'))
     .then(({ myModule })=>console.log(myModule.yellow)) // Logs: snowflakes
@@ -43,7 +43,7 @@ This allows to use import with dynamic content.
 
 ```js
 // The exported fetch is cross environment Nodejs and Browser
-import { SourceTextModule, fetchImport } from 'esm-loader/loader.mjs'
+import { SourceTextModule, fetchImport } from 'esm-loader/esm-loader.mjs'
 
 // Creates a dynamic import from a string
 // Returns a ESM Module with exports from string has resovle for Bare and Absolut Specifiers
@@ -68,7 +68,7 @@ inside browser for custom elements or scripts
 ========
 
 ```js
-import { SourceTextModule, fetchImport } from 'esm-loader/loader.mjs'
+import { SourceTextModule, fetchImport } from 'esm-loader/esm-loader.mjs'
 
 // Creates a dynamic import from a string
 
