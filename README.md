@@ -1,6 +1,10 @@
 # esm-loader
 Allows to load esm from any file formart can be seen as loader construction kit while offering precoded methods to do generic loader stuff in cross environment applications. It also can be seen as Pollyfill for importScript and dynamic import from url for NodeJS.
 
+While its main Existence is to Load .stealify files in ESM Environments. Stealify files are compatible to ecmascript in general but they apply some conventions and opinions over it for example they can only export propertys that do return streams of already instantiated streams. So they are locked.
+
+Stealify files get most comfortable created via .stealify referencing => .js files where .stealify files use only import export and as sayed only export instantiated streams. If you need to code highly complex functional streams you will use a framework like mostjs or rxjs where mostjs is highly prefered over rxjs or others most/core is the standard in functional stream patterns today.
+
 ## CHANGELOG ##
 breaking change is deprecating strToESM its successor is ESMLoader and moduleString
 
