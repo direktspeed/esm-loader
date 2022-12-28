@@ -5,6 +5,13 @@ While its main Existence is to Load .stealify files in ESM Environments. Stealif
 
 Stealify files get most comfortable created via .stealify referencing => .js files where .stealify files use only import export and as sayed only export instantiated streams. If you need to code highly complex functional streams you will use a framework like mostjs or rxjs where mostjs is highly prefered over rxjs or others most/core is the standard in functional stream patterns today.
 
+## Main Benefits of .stealify files
+
+You only got a limited subset of stuff to expect from them and get a common behavior cross platform you will work only with Streams that emit and apply data to targets. That makes it simple to guess around your Applications and what they are doing at the low level which gives you higher maintainablity and readablity out of the box as also many Security bestpratices directly applyed with zero overhead that is what we call code excelence. 
+
+Everything that you can learn from books like clean code and others are directly applyed out of the box at a fundamental level so you can do nothing wrong most of the time it is hard to do so.
+
+
 ## CHANGELOG ##
 breaking change is deprecating strToESM its successor is ESMLoader and moduleString
 
