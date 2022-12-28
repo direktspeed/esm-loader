@@ -1,6 +1,6 @@
 {
   "name": "esm-loader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A ESM Loader for NodeJS and Browsers Allows to import modules from any source is extendible via modules.",
   "main": "esm-loader.mjs",
   "module": "esm-loader.mjs",
